@@ -1,0 +1,33 @@
+
+<link rel="stylesheet" href="<%= assetPath('css/chatbox.css') %>">
+
+<% if (locals.user){ %>
+	<div id="user-chat-box">
+	
+		<ul id="chat-messages-list">
+			<li class="other-message">
+				
+				
+			</li>
+			<li class="self-message">
+				
+				
+			</li>
+
+		</ul>
+		<div id="chat-message-input-container">
+			<input id="chat-message-input" placeholder="Type message here">
+			<button id="send-message">Send</button>
+		</div>
+
+	</div>
+<% } %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script>
+<script src="<%= assetPath('js/chat_engine.js')%>"></script>
+
+<%if(locals.user){%>
+	<script>
+		new ChatEngine('user-chat-box','<%= locals.user.email%>')
+	</script>
+<%}%>

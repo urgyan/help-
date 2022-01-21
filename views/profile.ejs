@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="<%= assetPath('css/profile.css') %>">
+
+<!-- <link rel="stylesheet" href="/css/profile.css"> -->
+<div class="container">
+    <div class="avatar-flip">
+        <img src="<%= user_profile.avatar%>"  alt="user.name" height="150" width="150">
+    </div>
+
+
+      <%if(user.id == user_profile.id){%>
+          
+        <h2><%= user_profile.name%></h2>
+        <h4>You are logged in using <%= user_profile.email%></h4>
+        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna ip sum dolore.</p>
+        <p>Connec dolore ipsum faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <br>
+        <form action="/user/update-profile/<%= user_profile.id%>" method="post" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Your name " value="<%= user_profile.name%>" required>
+            <input type="email" name="email" placeholder="Your email% " value="<%= user_profile.email%>" required> 
+            <input type="file" name="avatar" placeholder="Profile picture">
+            <input type="submit" value="Update Profile">
+          
+        </form>
+      <%}else{%>
+        <h2><%= user_profile.name%></h2>
+        <h4>You are logged in using <%= user_profile.email%></h4>
+        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna ip sum dolore.</p>
+        <p>Connec dolore ipsum faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+      <%}%>
+
+
+      <%if (locals.user && user_profile.id != locals.user.id){%>
+        <% if(locals.user.friendShips.includes(user_profile.id)){%>
+          <a class="add-friend" href="/friend/add-friend/?id=<%= user_profile.id%>">
+            <button>Un Friend</button>
+          </a>
+        <%}else{%>
+          <a class="add-friend" href="/friend/add-friend/?id=<%= user_profile.id%>">
+            <button>Add Friend</button>
+          </a>
+        <%}%>
+      <%}%> 
+
+    
+  </div>
+
+<script src="<%= assetPath('js/profile.js')%>"></script>
+
+ 
+<script>
+    $('.add-friend').each(function(){
+        let self = this;
+        let toggleFriend = new AddFriend(self);
+    });
+</script> 

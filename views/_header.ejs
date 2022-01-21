@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="<%= assetPath('css/header.css') %>">
+
+<!-- <link rel="stylesheet" href="/css/header.css"> -->
+<header>
+    <a href="/">
+        <img src="<%= assetPath('images/logo.png') %>" alt="logo-image">
+
+    </a>
+
+    <ul>
+        <% if (locals.user) {%>
+
+            <li>
+                <button>
+                    <a href="/user/profile/<%= locals.user.id%>">
+                        <%= user.name%>
+                    </a>
+                </button>
+                
+            </li>
+            <li> 
+
+               <button>
+                    <a href="/user/sign-out">
+                        Sign out
+                    </a>
+               </button>
+                    
+                
+
+                
+             </li>
+        <% }else{ %>
+            <li>
+                <button >
+                    <a href="/user/sign-in">sign-in</a>
+                </button>
+                    
+            </li>
+
+            <li>
+
+                <button>
+                    <a href="/user/sign-up">sign-up</a>
+                </button>
+                    
+                
+                
+            </li>
+
+        <% } %>
+    </ul>
+</header>

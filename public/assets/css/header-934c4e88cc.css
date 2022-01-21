@@ -1,0 +1,1 @@
+header{display:flex;justify-content:space-between}header img{padding:5px;height:60px;width:60px}header ul{list-style-type:none;display:flex}header ul li{margin-left:10px}header ul li button{border-radius:10px;border:none;height:40px;width:100px;background-color:#21555c}header ul li a{font-family:sans-serif;font-size:large;color:#fff;text-decoration-line:none}

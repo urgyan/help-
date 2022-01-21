@@ -1,0 +1,6 @@
+<h1>Mail sent to the <%= user%></h1>
+<form action="/user/reset-password-page/<%= token%>" method="post">
+    <p>Enter the token sent in your email!!</p>
+    <input type="text" name="sendtoken"  placeholder="Enter the token ...">
+    <input type="submit" value="Submit">
+</form>

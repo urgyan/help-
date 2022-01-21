@@ -1,0 +1,112 @@
+
+
+.post-container{
+	/*display: flex;*/
+    border-radius: 4px;
+    background-color: white;
+	height: 400px;
+	width: 400px;
+	padding:1%;
+	border: 1px solid black;
+    margin: 2%;
+}
+
+
+/*HEADER DESING*/
+.header{
+	border-bottom: 1px solid black;
+	display: flex;
+	justify-content: space-between;
+}
+
+.left-part{
+	width: 150px;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.left-part img{
+
+	height: 55px;
+	width: 55px;
+	border-radius: 50%;
+}
+
+.left-part a{
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+.right-part{
+
+	display: flex;
+}
+.right-part a{
+	padding: 15px;
+}
+
+/*post content*/
+.post-content{
+	overflow-y: overlay;
+	height: 300px;
+	max-height: 300px;
+	padding: 1%;
+	display: flex;
+}
+
+/*postheader*/
+
+
+.footer{
+	display: flex;
+}
+
+.footer i{
+    cursor: pointer;
+    /* box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); */
+    outline: none;
+    
+    border: none;
+	height:30px;
+	width: 200px;
+}
+
+
+
+.comment-container{
+    padding: 2%;
+    width: 400px;
+    text-align: center;
+    margin-right:30px;
+}
+
+.post-comments > form{
+    display: flex;
+    width: fit-content;
+}
+
+#add-comment{
+    height: 40px;
+    width: 300px;
+}
+
+#add-button{
+    width: 100px;
+}
+
+.red{
+	color: rgb(9, 163, 252);
+}
+
+
+.post-comment-list{
+	display: flex;
+	height: 200px;
+	overflow-y:overlay;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+    
+}

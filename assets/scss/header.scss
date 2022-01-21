@@ -1,0 +1,32 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    img{
+        padding: 5px;
+        height: 60px;
+        width: 60px;
+    }
+    ul{
+        list-style-type: none;
+        display: flex;
+        li{
+            margin-left: 10px;
+
+            button{
+                border-radius: 10px;
+                border: none;
+                height: 40px;
+                width: 100px;
+                background-color: rgb(33, 85, 92);
+            }
+
+            a{
+                font-family: sans-serif;
+                font-size: large;
+                // background-color: greenyellow;
+                color: white;
+               text-decoration-line: none;
+            }
+        }
+    }
+}

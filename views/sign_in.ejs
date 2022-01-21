@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="<%= assetPath('css/signin.css') %>">
+
+<!-- <link rel="stylesheet" href="/css/signin.css"> -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Sign Up
+  </button> -->
+  
+  <!-- Modal -->
+
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="column" id="main">
+            <h1>Sign in </h1>
+            <h3>Welcome back to the World of Chatter</h3>
+            <form action="/user/create-session" method="post">
+        
+              <div class="form-group">
+             
+                <input type="email" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="E-mail" required>
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+              </div>
+
+              
+              <button type="submit" class="btn btn-primary">Sign In</button>
+              <button type="button" class="btn btn-primary"> <a href="/user/reset-password">Reset/Forget-Password</a> </button>
+
+            </form>
+          </div>
+          <div>
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+                <title>Path</title>
+                <desc>Created with Sketch.</desc>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z" id="Path" fill="#F9BC35"></path>
+                </g>
+            </svg>
+          </div>
+          <div class="column" id="secondary">
+            <div class="sec-content">
+              <h2>Welcome Back!</h2>
+              <h3>Chatter is always here to serve you!!</h3>
+              <a href="/">
+
+                <button type="button" class="btn btn-primary">Home</button>
+                <button type="button" class="btn btn-primary"> <a href="/user/auth/google">Google SignIn/SIgnUp</a> </button>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+      </div>

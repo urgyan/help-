@@ -1,0 +1,58 @@
+#home-container{
+    display:flex;
+    #feed-posts{
+        width: 40%;
+        padding: 10px;
+        margin-left: 25%;
+      
+    }
+
+    ul{
+        list-style-type: none;
+        // text-decoration: none;
+    }
+    
+    //All friends
+    #friend-list{
+        width: 30%;
+        padding: 10px;
+        border-left: 1px solid lightgrey;
+        height: inherit;
+
+
+        li{
+            font-size:20px;
+            text-align:left;
+            margin-top: 10px;
+            div{
+                .add-friend{
+                    color: rgb(44, 151, 240);
+                }
+            }
+            a{
+                color: white;
+                text-decoration: none;
+                
+            }
+        }
+    }
+
+    //All user
+    #all-user{
+        width: 30%;
+        padding: 10px;
+        height: inherit;
+        
+
+        li{
+            
+            font-size:20px;
+            text-align:left;
+            margin-top: 10px;
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}

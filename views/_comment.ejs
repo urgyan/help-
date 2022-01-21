@@ -1,0 +1,62 @@
+<li id="comment-<%=comment._id%>">
+    
+
+    <div class="comment-container1">
+        <div class="header1">
+            <div class="left-part1">
+                <img src="<%= comment.user.avatar%>">
+                <h6><%= comment.user.name%></h6>
+            </div>
+            <div class="right-part1">
+                <% if(locals.user){%>
+            
+                    <% if(comment.user.id == locals.user.id ||  post.user.id == locals.user.id){%>
+                        <small>
+                            <a class="delete-comment-button" href="/comment/destroy/<%= comment.id%>"><i class="fas fa-times-circle"></i></a>
+                        </small>
+                    <%}%>
+                   
+                <%}%>
+            </div>
+        </div>
+
+        <div class="comment-content1">
+            <p>
+                <%= comment.content%>
+            </p>
+        </div>
+            
+        <div class="footer1">
+            <%if(locals.user){%>
+                <%let obj = comment.likes.find(o =>{%>
+                    <%return o.user.toString() == user._id%>
+                <%})%>
+             
+                <% if(obj){%>
+                    <a class="toggle-like-button red" data-likes="<%= comment.likes.length%>" href="/likes/toggle/?id=<%= comment._id%>&type=Comment">
+                        <i class="fas fa-lg fa-thumbs-up">
+                            <%= comment.likes.length%>
+                        </i>
+                    </a>
+                <%}else{%>
+                    <a class="toggle-like-button red" data-likes="<%= comment.likes.length%>" href="/likes/toggle/?id=<%= comment._id%>&type=Comment">
+                        <i class="far fa-lg fa-thumbs-up">
+                            <%= comment.likes.length%>
+                        </i>
+                    </a>
+                <%}%>    
+                <%}else{%>
+                    <i class="far fa-lg fa-thumbs-up">
+                        <%= comment.likes.length%>
+                    </i>
+                <%}%>
+
+        </div>
+            
+    </div>
+
+</li>
+
+
+
+

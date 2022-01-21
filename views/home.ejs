@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="<%= assetPath('css/home.css') %>">
+<link rel="stylesheet" href="<%= assetPath('css/post.css') %>">
+<link rel="stylesheet" href="<%= assetPath('css/comment.css') %>">
+
+
+<div id="home-container">
+
+    <section  id="feed-posts">
+        <h4>Posts</h4>
+    
+        <% if(locals.user){%>
+    
+        <form action="/post/create" method="post" id="new-post-form">
+    
+            <textarea id="post-form" name="content" cols="30" rows="3" placeholder="Type here... " required></textarea>
+            <input type="submit" value="Post">
+        </form>
+        <%}%>
+        <div id="post-list-container">
+            <ul>
+                <%for(post of posts){ %>
+                    <%-include('_post')-%>
+                <%}%>
+            </ul>
+        </div>
+    </section>
+    
+    
+    <section id="friend-list">
+        <h1>Friends</h1>
+        <ul id="all-friends">
+
+
+            <%if(currUser){%>
+                <%for(friend of currUser.friendShips){%>
+                    <li>
+                        <div class="delete-friend-<%= friend.id%>">
+                            <a class="add-friend" class="delete-friend-<%= friend.id%>" href="/friend/add-friend/?id=<%= friend.id%>">
+                                <i class="fas fa-times-circle"></i>
+                            </a>
+                            <a  href="/user/profile/<%= friend.id %>">
+                                <%= friend.name%>
+                            </a>
+                        </div>
+                        
+                    </li>
+                <%}%>
+            <%}%> 
+        </ul>
+
+        <h1>All User</h1>
+
+        <ul id="all-user">
+            <%for(u of all_users){%>
+                <li>
+                    <a href="/user/profile/<%= u.id %>">
+                        <%= u.name%>
+                    </a>
+                </li>
+            <%}%>
+        </ul>
+    </section>
+
+    <%- include('_chatbox')%>
+    
+</div>
+
+
+<script src="<%= assetPath('js/comment.js')%>"></script>
+
+
+<script src="<%= assetPath('js/home_post.js')%>"></script>
+
+
+
+<script src="<%= assetPath('js/toggle_like.js')%>"></script>
+
+<script>
+    $('.toggle-like-button').each(function(){
+        let self=this;
+        let toggleLike=new ToggleLike(self);
+    });
+</script>
+
+
+
+
+<script src="<%= assetPath('js/profile.js')%>"></script>
+
+<script>
+    $('.add-friend').each(function(){
+        let self = this;
+        let toggleFriend = new AddFriend(self);
+    });
+</script>
+
+
